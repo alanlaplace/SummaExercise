@@ -1,0 +1,2 @@
+# SummaExercise
+Exercise resoluction
