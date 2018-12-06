@@ -16,18 +16,33 @@
 
             $this->average_age = 0;
         }
-        
-        function addEmployee($employee){
+
+        /**
+         * Adds a new employee in the enterprise
+         * 
+         * @param Employee $employee
+         */
+        function addEmployee(Employee $employee){
             $employees_count = count($this->employees);
             $age_sum = $this->average_age * $employees_count;
             $this->employees[] = $employee;
             $this->average_age = ($age_sum + $employee->age) / ($employees_count + 1); 
         }
 
+        /**
+         * Returns the average age of the employees in the enterprise
+         * 
+         * @return double 
+         */
         function getAverageAge(){
             return $this->average_age;
         }
 
+        /**
+         * Returns a string with the formatted information of all employees
+         * 
+         * @return string 
+         */
         function getFormattedEmployeesList(){
             $employees_string_list = array_map(function($employee) {
                 return (string)$employee; // __toString method
@@ -36,6 +51,12 @@
             return nl2br(implode("\n", $employees_string_list));
         }
 
+        /**
+        * Returns an Employee instance if a employee with the given $id is found, or null in other case
+        * 
+        * @param int $id
+        * @return Employee|null
+        */
         function getEmployee($id){
             $result = array_filter(
                 $this->employees,
@@ -52,7 +73,7 @@
             if (property_exists($this, $property_name)) {
               return $this->$property_name;
             }
-          }
+        }
         
         public function __set($property_name, $value) {
             if (property_exists($this, $property_name)) {
