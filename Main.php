@@ -6,6 +6,7 @@
     include("Designer.php");
     include("DesignerType.php");
     include("ProgrammingLanguaje.php");
+    include("IdGenerator.php");
 
     function printLine($text){
         echo "<p>".$text."</p>";
@@ -45,18 +46,20 @@
     printLine($enterprise->getFormattedEmployeesList());
 
     // Show average employee list
-    printSubtitle("Average Age: ".$enterprise->getAverageAge());
+    printSubtitle("Getting average age...");
+    printLine("Average age is: ".$enterprise->getAverageAge());
 
     // Changing id to designer so i can find it later
-    printSubtitle("Changing designer id to 1");
-    $designer->id = 1;
+    printSubtitle("Changing designer id to 10000 and developer name to Mark");
+    $designer->id = 10000;
+    $developer->name = "Mark";
 
     // Showing updated information
-    printline("Employees list information after designer update");
+    printline("Employees list information after update");
     printLine($enterprise->getFormattedEmployeesList());
 
     //
-    printSubtitle("Find employee with id 1 and show information");
-    printLine((string)$enterprise->getEmployee(1));
+    printSubtitle("Find employee with id 10000 and show information");
+    printLine((string)$enterprise->getEmployee(10000));
 
 ?>
