@@ -6,15 +6,11 @@
         private $name;
         private $employees;
 
-        private $average_age;
-
         function __construct($name) {
             // Generates a random id
-            $this->id = rand();
+            $this->id = IdGenerator::getInstance()->getUniqueId();
             $this->name = $name;
             $this->employees = [];
-
-            $this->average_age = 0;
         }
 
         /**
@@ -23,10 +19,7 @@
          * @param Employee $employee
          */
         function addEmployee(Employee $employee){
-            $employees_count = count($this->employees);
-            $age_sum = $this->average_age * $employees_count;
-            $this->employees[] = $employee;
-            $this->average_age = ($age_sum + $employee->age) / ($employees_count + 1); 
+            $this->employees[] = $employee; 
         }
 
         /**
@@ -35,7 +28,11 @@
          * @return double 
          */
         function getAverageAge(){
-            return $this->average_age;
+            $sum = array_reduce($this->employees, function($partial, $employee)
+            {
+                return $partial += $employee->age;
+            });
+            return $sum / count($this->employees);
         }
 
         /**

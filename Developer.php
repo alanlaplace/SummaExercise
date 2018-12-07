@@ -21,7 +21,7 @@
         
         public function __set($property_name, $value) {
             if (property_exists($this, $property_name)) {
-              $this->$property = $value;
+              $this->$property_name = $value;
             }
         
             return $this;

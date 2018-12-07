@@ -9,7 +9,7 @@
 
         function __construct($name, $surname, $age) {
             // Generates a random id
-            $this->id = rand();
+            $this->id = IdGenerator::getInstance()->getUniqueId();
             $this->name = $name;
             $this->surname = $surname;
             $this->age = $age;
