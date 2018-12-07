@@ -16,6 +16,11 @@
             return self::$instance;
         }
         
+        /**
+        * Returns an Unique id
+        * 
+        * @return int
+        */
         public function getUniqueId()
         {
             $this->current_id ++;

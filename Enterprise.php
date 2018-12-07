@@ -32,6 +32,7 @@
             {
                 return $partial += $employee->age;
             });
+            
             return $sum / count($this->employees);
         }
 
@@ -42,7 +43,7 @@
          */
         function getFormattedEmployeesList(){
             $employees_string_list = array_map(function($employee) {
-                return (string)$employee; // __toString method
+                return (string)$employee;
             }, $this->employees);
 
             return nl2br(implode("\n", $employees_string_list));
