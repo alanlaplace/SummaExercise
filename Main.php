@@ -5,7 +5,7 @@
     include("Developer.php");
     include("Designer.php");
     include("DesignerType.php");
-    include("ProgrammingLanguaje.php");
+    include("ProgrammingLanguage.php");
     include("IdGenerator.php");
 
     function printLine($text){
@@ -31,7 +31,7 @@
 
     // Create new developer
     printSubtitle("Creating new developer...");
-    $developer = new Developer("Guy", "Incognito", 21, ProgrammingLanguaje::PHP);
+    $developer = new Developer("Guy", "Incognito", 21, ProgrammingLanguage::PHP);
     printLine("New developer created.");
     printLine("Developer information: {".(string)$developer."}");
 

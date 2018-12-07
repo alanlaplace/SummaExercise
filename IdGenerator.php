@@ -8,6 +8,11 @@
         private function __construct() {
         }
      
+        /**
+        * Returns an IdGenerator instance, always the same. 
+        * 
+        * @return IdGenerator
+        */
         public static function getInstance()
         {
             if (!isset(self::$instance)) {

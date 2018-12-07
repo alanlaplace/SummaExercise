@@ -1,6 +1,6 @@
 <?php namespace SummaExercise;
 
-    class ProgrammingLanguaje {
+    class ProgrammingLanguage {
         const PHP = "PHP";
         const NET = "NET";
         const PYTHON = "Python";
@@ -8,13 +8,13 @@
         const LANGUAGES = [self::PHP, self::NET, self::PYTHON];
 
         /**
-         * Returns True if $languaje is a valid languaje, or false if not
+         * Returns True if $language is a valid language, or false if not
          * 
-         * @param string $languaje
+         * @param string $language
          * @return bool
         */
-        public static function validate($languaje){
-            return in_array($languaje, self::LANGUAGES);
+        public static function validate($language){
+            return in_array($language, self::LANGUAGES);
         }
     }
     

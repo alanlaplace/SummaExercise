@@ -2,14 +2,14 @@
 
     class Developer extends Employee{
         /* Member variables */
-        private $programming_languaje;
+        private $programming_language;
 
-        function __construct($name, $surname, $age, $programming_languaje) {
-            if(!ProgrammingLanguaje::validate($programming_languaje)){
-                throw new Exception("[Developer] Exception: undefined Programming languaje type not found.");
+        function __construct($name, $surname, $age, $programming_language) {
+            if(!ProgrammingLanguage::validate($programming_language)){
+                throw new Exception("[Developer] Exception: undefined Programming language type not found.");
             }
 
-            $this->programming_languaje = $programming_languaje;
+            $this->programming_language = $programming_language;
             parent::__construct($name, $surname, $age);
         }
 
@@ -28,7 +28,7 @@
         }
 
         public function __toString() {
-            return "Employee type: ". __CLASS__ . ", id: $this->id, complete name: $this->surname $this->name, age: $this->age, languaje: $this->programming_languaje";
+            return "Employee type: ". __CLASS__ . ", id: $this->id, complete name: $this->surname $this->name, age: $this->age, language: $this->programming_language";
         }
     }
 
