@@ -46,7 +46,7 @@
                 return (string)$employee;
             }, $this->employees);
 
-            return nl2br(implode("\n", $employees_string_list));
+            return implode("<br>", $employees_string_list);
         }
 
         /**
